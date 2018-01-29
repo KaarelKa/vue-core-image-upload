@@ -369,13 +369,14 @@ export default {
         w: $el.offsetWidth,
         h: $el.offsetHeight,
       };
+      console.log("coor", coor);
       this.el = $el;
       this.container = $container;
       const maxCoor = this._getMaxCropAreaWidth();
+      console.log("maxCoor", maxCoor);
       const move = function (ev) {
-        console.log("maxCoor", maxCoor);
+        console.log("moving", ev);
         const newCropStyle = resize(ev, self.el, $container, coor, self.ratioVal);
-        console.log("newCropStyleargs", ev, self.el, $container, coor, self.ratioVal);
         if (newCropStyle && (newCropStyle.width <= maxCoor.maxWidth || newCropStyle.height <= maxCoor.maxHeight)) {
           self.cropCSS.width = newCropStyle.width;
           self.cropCSS.height = newCropStyle.height;
