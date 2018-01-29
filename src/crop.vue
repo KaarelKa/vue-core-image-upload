@@ -373,7 +373,9 @@ export default {
       this.container = $container;
       const maxCoor = this._getMaxCropAreaWidth();
       const move = function (ev) {
+        console.log("maxCoor", maxCoor);
         const newCropStyle = resize(ev, self.el, $container, coor, self.ratioVal);
+        console.log("newCropStyleargs", ev, self.el, $container, coor, self.ratioVal);
         if (newCropStyle && (newCropStyle.width <= maxCoor.maxWidth || newCropStyle.height <= maxCoor.maxHeight)) {
           self.cropCSS.width = newCropStyle.width;
           self.cropCSS.height = newCropStyle.height;
